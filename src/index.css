@@ -1,0 +1,174 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 29 29% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 29 29% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 29 29% 10%;
+
+    --primary: 213 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 213 100% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 213 100% 45%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    @apply bg-apple-blue text-white;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl transition-all duration-300 hover:shadow-md;
+  }
+
+  .btn-primary {
+    @apply bg-apple-blue text-white px-6 py-2.5 rounded-full font-medium 
+           transition-all duration-300 hover:shadow-md hover:bg-opacity-90 
+           active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-apple-blue/50;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-foreground px-6 py-2.5 rounded-full font-medium 
+           transition-all duration-300 hover:shadow-md hover:bg-secondary/80 
+           active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-secondary/50;
+  }
+
+  .nav-link {
+    @apply relative px-3 py-2 font-medium text-apple-black transition-colors duration-300
+           after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-apple-blue
+           after:transition-all after:duration-300 hover:text-apple-blue hover:after:w-full;
+  }
+
+  .nav-link.active {
+    @apply text-apple-blue after:w-full;
+  }
+
+  .h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-apple-black;
+  }
+
+  .h2 {
+    @apply text-3xl md:text-4xl font-light tracking-tight text-apple-black;
+  }
+
+  .h3 {
+    @apply text-2xl md:text-3xl font-light tracking-tight text-apple-black;
+  }
+
+  .caption {
+    @apply text-sm text-apple-dark-gray;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16;
+  }
+
+  .section {
+    @apply py-16;
+  }
+
+  .hero-gradient {
+    background: radial-gradient(
+      circle at center,
+      rgba(71, 169, 235, 0.05) 0%,
+      rgba(0, 113, 227, 0.01) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .chat-window {
+    @apply bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-md border border-gray-100;
+  }
+
+  .subtle-border {
+    @apply border border-gray-100/70;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Custom Animations */
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+
+/* For smooth scrolling between sections */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar glass effect when scrolled */
+.navbar-glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
